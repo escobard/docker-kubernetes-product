@@ -1,14 +1,17 @@
 # each config file is used to create an object within kubernetes
+# A VM can also be referred to as a node
 ## each api version contains different object types, use carefully
 apiVersion: v1
 # defines the type of object we want to make within kube
-## pods are used to run a container
+## pods are used to run one or many containers
+### pods can be used to define complex container relationship and dependencies to automate behavior in case of exceptions
 kind: Pod
 metadata:
   name: client-pod
   labels:
     component: web
 spec:
+  # can specify multiple container per pod
   containers:
     - name: client
       image: escobard/docker-aws-product-ui-prod
