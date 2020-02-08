@@ -1,4 +1,5 @@
 apiVerion: v1
+## service objects are used to set up networking
 kind: Service
 metadata:
   name: client-node-port

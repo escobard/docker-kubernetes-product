@@ -1,4 +1,8 @@
+# each config file is used to create an object within kubernetes
+## each api version contains different object types, use carefully
 apiVersion: v1
+# defines the type of object we want to make within kube
+## pods are used to run a container
 kind: Pod
 metadata:
   name: client-pod
