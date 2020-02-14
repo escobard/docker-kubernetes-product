@@ -1,13 +1,22 @@
-apiVerion: v1
-## service objects are used to set up networking
+apiVersion: v1
+## service objects are used to set up networking in a Kube cluster
+### the 4 subtypes of services are ClusterIP, NodePort, LoadBalancer and Ingres
 kind: Service
 metadata:
   name: client-node-port
 spec:
+  ## purpose is to expose a container (within a pod) to the outside world
   type: NodePort
+  ## exposes the targetPort to outside the cluster, expects a Pod with a container to expose the port within the cluster
+  ### can explose multiple ports
   ports:
-    - ports: 3050
+    # this is a port within the cluster that other objects can access to get a hold of the object running on the targetPort
+    - port: 3050
+      # this is the port inside the Pod that we want to open traffic to
       targetPort: 3000
+      # optional, random between 30000-32767, rarely used
       nodePort: 31515
+  # this is known as the label selector system
+  ## this looks for any other object in the cluster with a matching key value pair of component: web
   selector:
     component: web

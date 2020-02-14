@@ -1,13 +1,15 @@
 # each config file is used to create an object within kubernetes
-# A VM can also be referred to as a node
 ## each api version contains different object types, use carefully
+### A VM attached to a network is  referred to as a node -  an electronic device that is attached to a network, and is capable of creating, receiving, or transmitting information over a communications channel.
 apiVersion: v1
 # defines the type of object we want to make within kube
 ## pods are used to run one or many containers
 ### pods can be used to define complex container relationship and dependencies to automate behavior in case of exceptions
 kind: Pod
+## useful naming for logging
 metadata:
   name: client-pod
+  ## this is tightly coupled with our Service object
   labels:
     component: web
 spec:
