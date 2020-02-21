@@ -18,5 +18,6 @@ spec:
   containers:
     - name: client
       image: escobard/docker-aws-product-ui-prod
+      ## changing the port of an existing pod is not allowed, this is fixed by using deployment object types
       ports:
         - containerPort: 3000
