@@ -8,6 +8,7 @@ apiVersion: v1
 kind: Pod
 ## useful naming for logging
 metadata:
+  ## the kubectl engine looks at the name / kind pair to determine wether it should create a new pod or update an existing one
   name: client-pod
   ## this is tightly coupled with our Service object
   labels:
