@@ -5,7 +5,7 @@ metadata:
   name: client-deployment
 ## all of these properties are editable and automatically update running pods
 spec:
-  replicas: 1
+  replicas: 5
   ## kube uses this label to check which matching running pods it needs to update
   selector:
     matchLabels:

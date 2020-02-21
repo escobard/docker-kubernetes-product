@@ -15,7 +15,8 @@ spec:
     - port: 3050
       # this is the port inside the Pod that we want to open traffic to
       targetPort: 3000
-      # optional, random between 30000-32767, rarely used
+      # optional, random between 30000-32767, rarely used in prod
+      ## for docker desktop, we connect to a pod by using localhost:nodePort
       nodePort: 31515
   # this is known as the label selector system
   ## this looks for any other object in the cluster with a matching key value pair of component: web
