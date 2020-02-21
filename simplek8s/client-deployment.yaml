@@ -20,4 +20,4 @@ spec:
         - name: client
           image: escobard/docker-aws-product-ui-prod
           ports: 
-            containerPort: 3000
+            - containerPort: 3000
